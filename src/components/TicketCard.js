@@ -12,16 +12,16 @@ import DeleteBlock from "./DeleteBlock"
 
 
 
-const TicketCard = () => {
+const TicketCard = ({color, ticket}) => {
     return (
 <div className="ticket-card">
-     <div className="ticket-color"></div>
-<Link>
-<h3>Title</h3>
-<AvatarDisplay/>
-<StatusDisplay/>
-<PriorityDisplay/>
-<ProgressDisplay/>
+<Link to={`/ticket/${ticket.documentId}`} id="Link">
+<div className="ticket-color"></div>
+<h3>{ticket.title}</h3>
+<AvatarDisplay ticket={ticket}/>
+<StatusDisplay status={ticket.status}/>
+<PriorityDisplay priority={ticket.priority}/>
+<ProgressDisplay progress={ticket.progress}/>
 
 </Link>
 <DeleteBlock/>
